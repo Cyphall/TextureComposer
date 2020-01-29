@@ -175,6 +175,9 @@
     <Compile Include="ViewModels\Nodes\ComposedTextureNode.cs" />
     <Compile Include="ViewModels\Nodes\OutputTestNode.cs" />
     <Compile Include="ViewModels\Nodes\TextureNode.cs" />
+    <Compile Include="Views\ComposedTextureNodeView.xaml.cs">
+      <DependentUpon>ComposedTextureNodeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -188,6 +191,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\ComposedTextureNodeView.xaml" />
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

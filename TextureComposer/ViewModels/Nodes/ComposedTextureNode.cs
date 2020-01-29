@@ -4,6 +4,7 @@ using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
+using TextureComposer.Views;
 
 namespace TextureComposer
 {
@@ -33,14 +34,7 @@ namespace TextureComposer
 		
 		static ComposedTextureNode()
 		{
-			Splat.Locator.CurrentMutable.Register(() =>
-			{
-				NodeView view = new NodeView
-				{
-					Background = new SolidColorBrush(Color.FromRgb(0x50, 0x50, 0x50))
-				};
-				return view;
-			}, typeof(IViewFor<ComposedTextureNode>));
+			Splat.Locator.CurrentMutable.Register(() => new ComposedTextureNodeView(), typeof(IViewFor<ComposedTextureNode>));
 		}
 	}
 }

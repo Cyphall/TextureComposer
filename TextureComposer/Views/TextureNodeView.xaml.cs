@@ -1,15 +1,14 @@
-﻿using System;
+﻿using System.Drawing;
 using System.Reactive.Disposables;
+using System.Reactive.Linq;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using Microsoft.Win32;
 using ReactiveUI;
+using Color = System.Drawing.Color;
 
 namespace TextureComposer.Views
 {
-	public partial class TextureNodeView : UserControl, IViewFor<TextureNode>
+	public partial class TextureNodeView : IViewFor<TextureNode>
 	{
 		#region ViewModel
 		public static readonly DependencyProperty ViewModelProperty = DependencyProperty.Register(nameof(ViewModel),
@@ -27,8 +26,6 @@ namespace TextureComposer.Views
 			set => ViewModel = (TextureNode)value;
 		}
 		#endregion
-		
-		public ImageSource TestImageSource;
 		
 		public TextureNodeView()
 		{
@@ -49,11 +46,32 @@ namespace TextureComposer.Views
 				RestoreDirectory = true
 			};
 
-			if (dlg.ShowDialog() == true)
+			if (dlg.ShowDialog() != true) return;
+			
+			Bitmap image = new Bitmap(dlg.FileName);
+
+			byte[,] r = new byte[image.Width, image.Height];
+			byte[,] g = new byte[image.Width, image.Height];
+			byte[,] b = new byte[image.Width, image.Height];
+			byte[,] a = new byte[image.Width, image.Height];
+				
+			for (int y = 0; y < image.Height; y++)
 			{
-				BitmapImage image = new BitmapImage(new Uri(dlg.FileName));
-				TestImageSource = image;
+				for (int x = 0; x < image.Width; x++)
+				{
+					Color color = image.GetPixel(x, y);
+
+					r[x, y] = color.R;
+					g[x, y] = color.G;
+					b[x, y] = color.B;
+					a[x, y] = color.A;
+				}
 			}
+
+			ViewModel.OutR.Value = Observable.Return(r);
+			ViewModel.OutG.Value = Observable.Return(g);
+			ViewModel.OutB.Value = Observable.Return(b);
+			ViewModel.OutA.Value = Observable.Return(a);
 		}
 	}
 }

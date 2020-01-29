@@ -30,10 +30,10 @@ namespace TextureComposer
 			OutA.Name = "A";
 			Outputs.Add(OutA);
 			
-			OutR.Value = Observable.Return(new byte[10,10]);
-			OutG.Value = Observable.Return(new byte[10,10]);
-			OutB.Value = Observable.Return(new byte[10,10]);
-			OutA.Value = Observable.Return(new byte[10,10]);
+			OutR.Value = Observable.Return(new byte[0, 0]);
+			OutG.Value = Observable.Return(new byte[0, 0]);
+			OutB.Value = Observable.Return(new byte[0, 0]);
+			OutA.Value = Observable.Return(new byte[0, 0]);
 		}
 		
 		static TextureNode()
