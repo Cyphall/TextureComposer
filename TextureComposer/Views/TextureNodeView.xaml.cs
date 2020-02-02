@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
+using System.IO;
 using System.Reactive.Disposables;
-using System.Reactive.Linq;
 using System.Windows;
 using Microsoft.Win32;
 using ReactiveUI;
@@ -8,22 +8,22 @@ using Color = System.Drawing.Color;
 
 namespace TextureComposer.Views
 {
-	public partial class TextureNodeView : IViewFor<TextureNode>
+	public partial class TextureNodeView : IViewFor<TextureNodeViewModel>
 	{
 		#region ViewModel
 		public static readonly DependencyProperty ViewModelProperty = DependencyProperty.Register(nameof(ViewModel),
-			typeof(TextureNode), typeof(TextureNodeView));
+			typeof(TextureNodeViewModel), typeof(TextureNodeView));
 
-		public TextureNode ViewModel
+		public TextureNodeViewModel ViewModel
 		{
-			get => (TextureNode)GetValue(ViewModelProperty);
+			get => (TextureNodeViewModel)GetValue(ViewModelProperty);
 			set => SetValue(ViewModelProperty, value);
 		}
 
 		object IViewFor.ViewModel
 		{
 			get => ViewModel;
-			set => ViewModel = (TextureNode)value;
+			set => ViewModel = (TextureNodeViewModel)value;
 		}
 		#endregion
 		
@@ -41,23 +41,28 @@ namespace TextureComposer.Views
 		{
 			OpenFileDialog dlg = new OpenFileDialog
 			{
-				InitialDirectory = @"c:\",
+				InitialDirectory = @"C:\Users\Cyphall\Downloads\",
 				Filter = "Image files (*.png, *.jpg)|*.png;*.jpg;*.jpeg",
 				RestoreDirectory = true
 			};
 
 			if (dlg.ShowDialog() != true) return;
+
+			ViewModel.Name = Path.GetFileName(dlg.FileName);
 			
 			Bitmap image = new Bitmap(dlg.FileName);
+			
+			int height = image.Height;
+			int width = image.Width;
 
-			byte[,] r = new byte[image.Width, image.Height];
-			byte[,] g = new byte[image.Width, image.Height];
-			byte[,] b = new byte[image.Width, image.Height];
-			byte[,] a = new byte[image.Width, image.Height];
-				
-			for (int y = 0; y < image.Height; y++)
+			ColorChannel r = new ColorChannel(width, height);
+			ColorChannel g = new ColorChannel(width, height);
+			ColorChannel b = new ColorChannel(width, height);
+			ColorChannel a = new ColorChannel(width, height);
+
+			for (int y = 0; y < height; y++)
 			{
-				for (int x = 0; x < image.Width; x++)
+				for (int x = 0; x < width; x++)
 				{
 					Color color = image.GetPixel(x, y);
 
@@ -68,10 +73,10 @@ namespace TextureComposer.Views
 				}
 			}
 
-			ViewModel.OutR.Value = Observable.Return(r);
-			ViewModel.OutG.Value = Observable.Return(g);
-			ViewModel.OutB.Value = Observable.Return(b);
-			ViewModel.OutA.Value = Observable.Return(a);
+			ViewModel.R.Value = r;
+			ViewModel.G.Value = g;
+			ViewModel.B.Value = b;
+			ViewModel.A.Value = a;
 		}
 	}
 }

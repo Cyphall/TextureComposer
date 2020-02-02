@@ -16,10 +16,11 @@ namespace TextureComposer
 
 		public MainViewModel()
 		{
-			ListViewModel.AddNodeType(() => new ComposedTextureNode());
-			ListViewModel.AddNodeType(() => new TextureNode());
-			// ListViewModel.AddNodeType(() => new InputTestNode());
-			// ListViewModel.AddNodeType(() => new OutputTestNode());
+			ListViewModel.AddNodeType(() => new TextureNodeViewModel());
+			ListViewModel.AddNodeType(() => new ComposedTextureNodeViewModel());
+			ListViewModel.AddNodeType(() => new InvertNodeViewModel());
+			ListViewModel.AddNodeType(() => new ExtractSizeNodeViewModel());
+			ListViewModel.AddNodeType(() => new ConstantNodeViewModel());
 		}
 	}
 }
