@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0668A082-AC56-4F59-8206-D09B4370EF94}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>TextureComposer</RootNamespace>
     <AssemblyName>TextureComposer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
