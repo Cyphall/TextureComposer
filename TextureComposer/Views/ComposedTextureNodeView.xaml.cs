@@ -6,7 +6,6 @@ using System.Reactive.Disposables;
 using System.Windows;
 using Microsoft.Win32;
 using ReactiveUI;
-using Splat;
 
 namespace TextureComposer.Views
 {

@@ -6,7 +6,7 @@
              xmlns:views="clr-namespace:NodeNetwork.Views;assembly=NodeNetwork"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-	<views:NodeView x:Name="NodeView" Background="#505050" FontFamily="Open Sans" Width="200" Margin="0" Padding="0" TitleFontSize="15">
+	<views:NodeView x:Name="NodeView" Background="#505050" FontFamily="Open Sans" Width="220" Margin="0" Padding="0" TitleFontSize="14">
 		<views:NodeView.TrailingControlPresenterStyle>
 			<Style TargetType="ContentPresenter">
 				<Setter Property="ContentTemplate">

@@ -1,5 +1,6 @@
 ﻿using NodeNetwork.Toolkit.ValueNode;
 using ReactiveUI;
+using Splat;
 using TextureComposer.Views;
 
 namespace TextureComposer
@@ -8,7 +9,7 @@ namespace TextureComposer
 	{
 		static ByteValueEditorViewModel()
 		{
-			Splat.Locator.CurrentMutable.Register(() => new ByteValueEditorView(), typeof(IViewFor<ByteValueEditorViewModel>));
+			Locator.CurrentMutable.Register(() => new ByteValueEditorView(), typeof(IViewFor<ByteValueEditorViewModel>));
 		}
 
 		public ByteValueEditorViewModel()

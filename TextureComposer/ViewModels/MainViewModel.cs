@@ -1,6 +1,7 @@
 ﻿using NodeNetwork.Toolkit.NodeList;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
+using Splat;
 
 namespace TextureComposer
 {
@@ -8,7 +9,7 @@ namespace TextureComposer
 	{
 		static MainViewModel()
 		{
-			Splat.Locator.CurrentMutable.Register(() => new MainWindow(), typeof(IViewFor<MainViewModel>));
+			Locator.CurrentMutable.Register(() => new MainWindow(), typeof(IViewFor<MainViewModel>));
 		}
 		
 		public NodeListViewModel ListViewModel { get; } = new NodeListViewModel();

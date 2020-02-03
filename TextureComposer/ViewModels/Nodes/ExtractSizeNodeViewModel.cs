@@ -3,6 +3,7 @@ using DynamicData;
 using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
+using Splat;
 using TextureComposer.Views;
 
 namespace TextureComposer
@@ -30,7 +31,7 @@ namespace TextureComposer
 		
 		static ExtractSizeNodeViewModel()
 		{
-			Splat.Locator.CurrentMutable.Register(() => new StylizedNodeView(), typeof(IViewFor<ExtractSizeNodeViewModel>));
+			Locator.CurrentMutable.Register(() => new StylizedNodeView(), typeof(IViewFor<ExtractSizeNodeViewModel>));
 		}
 	}
 }

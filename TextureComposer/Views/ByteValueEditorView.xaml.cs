@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 using ReactiveUI;
 
 namespace TextureComposer.Views
@@ -28,7 +27,7 @@ namespace TextureComposer.Views
 			InitializeComponent();
 
 			this.WhenActivated(d => d(
-				this.Bind(ViewModel, vm => vm.Value, v => v.valueUpDown.Value)
+				this.Bind(ViewModel, vm => vm.Value, v => v.ValueUpDown.Value)
 			));
 		}
 	}

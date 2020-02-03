@@ -3,6 +3,7 @@ using DynamicData;
 using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
+using Splat;
 using TextureComposer.Views;
 
 namespace TextureComposer
@@ -33,7 +34,7 @@ namespace TextureComposer
 		
 		static ConstantNodeViewModel()
 		{
-			Splat.Locator.CurrentMutable.Register(() => new StylizedNodeView(), typeof(IViewFor<ConstantNodeViewModel>));
+			Locator.CurrentMutable.Register(() => new StylizedNodeView(), typeof(IViewFor<ConstantNodeViewModel>));
 		}
 	}
 }

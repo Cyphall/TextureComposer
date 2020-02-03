@@ -1,8 +1,8 @@
-﻿using System.Reactive.Linq;
-using DynamicData;
+﻿using DynamicData;
 using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
+using Splat;
 using TextureComposer.Views;
 
 namespace TextureComposer
@@ -42,7 +42,7 @@ namespace TextureComposer
 		
 		static TextureNodeViewModel()
 		{
-			Splat.Locator.CurrentMutable.Register(() => new TextureNodeView(), typeof(IViewFor<TextureNodeViewModel>));
+			Locator.CurrentMutable.Register(() => new TextureNodeView(), typeof(IViewFor<TextureNodeViewModel>));
 		}
 	}
 }

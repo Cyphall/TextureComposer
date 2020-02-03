@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextureComposer", "TextureComposer\TextureComposer.csproj", "{0668A082-AC56-4F59-8206-D09B4370EF94}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextureComposer", "TextureComposer\TextureComposer.csproj", "{9C52974A-EF9D-4A6E-BB42-9391F9CB7710}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0668A082-AC56-4F59-8206-D09B4370EF94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0668A082-AC56-4F59-8206-D09B4370EF94}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0668A082-AC56-4F59-8206-D09B4370EF94}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0668A082-AC56-4F59-8206-D09B4370EF94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C52974A-EF9D-4A6E-BB42-9391F9CB7710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C52974A-EF9D-4A6E-BB42-9391F9CB7710}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C52974A-EF9D-4A6E-BB42-9391F9CB7710}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C52974A-EF9D-4A6E-BB42-9391F9CB7710}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

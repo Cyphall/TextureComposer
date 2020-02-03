@@ -4,7 +4,6 @@ using System.Reactive.Disposables;
 using System.Windows;
 using Microsoft.Win32;
 using ReactiveUI;
-using Color = System.Drawing.Color;
 
 namespace TextureComposer.Views
 {
