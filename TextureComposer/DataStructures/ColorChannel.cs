@@ -7,9 +7,7 @@ namespace TextureComposer
 	public class ColorChannel
 	{
 		private byte[] _data;
-		public int Width { get; }
-		public int Height { get; }
-		private List<Func<byte, byte>> _modifs = new List<Func<byte, byte>>();
+		private List<Action<byte[]>> _modifiers = new List<Action<byte[]>>();
 		
 		public byte this[int x, int y]
 		{
@@ -17,14 +15,39 @@ namespace TextureComposer
 			set => _data[x + y * Width] = value;
 		}
 
+		public int Width { get; }
+		public int Height { get; }
 		public int Length => _data.Length;
+
+		public byte[,] FinalData
+		{
+			get
+			{
+				byte[] tempData = new byte[Length];
+				Buffer.BlockCopy(_data, 0, tempData, 0, Length);
+				
+				_modifiers.ForEach(modif => modif.Invoke(tempData));
+				
+				byte[,] finalData = new byte[Width, Height];
+				
+				for (int y = 0; y < Height; y++)
+				{
+					for (int x = 0; x < Width; x++)
+					{
+						finalData[x, y] = tempData[x + y * Width];
+					}
+				}
+
+				return finalData;
+			}
+		}
 		
-		private ColorChannel(byte[] data, int width, int height, List<Func<byte, byte>> modifs)
+		private ColorChannel(byte[] data, int width, int height, List<Action<byte[]>> modifiers)
 		{
 			_data = data;
 			Width = width;
 			Height = height;
-			_modifs = modifs;
+			_modifiers = modifiers;
 		}
 
 		public ColorChannel(int width, int height, byte[] data)
@@ -48,27 +71,15 @@ namespace TextureComposer
 			Height = height;
 		}
 
-		public byte TransformedByte(int i)
+		public ColorChannel AddModifier(Action<byte[]> newModifier)
 		{
-			byte b = _data[i];
-			_modifs.ForEach(modif => b = modif.Invoke(b));
-			return b;
-		}
-		
-		public byte TransformedByte(int x, int y)
-		{
-			return TransformedByte(x + y * Width);
-		}
-
-		public ColorChannel AddModif(Func<byte, byte> newModif)
-		{
-			List<Func<byte, byte>> modifs = new List<Func<byte, byte>>();
+			List<Action<byte[]>> modifiers = new List<Action<byte[]>>();
 			
-			_modifs.ForEach(modif => modifs.Add((Func<byte, byte>)modif.Clone()));
+			_modifiers.ForEach(modifier => modifiers.Add((Action<byte[]>)modifier.Clone()));
 			
-			modifs.Add(newModif);
+			modifiers.Add(newModifier);
 			
-			return new ColorChannel(_data, Width, Height, modifs);
+			return new ColorChannel(_data, Width, Height, modifiers);
 		}
 	}
 }

@@ -107,15 +107,21 @@ namespace TextureComposer.Views
 			// Generate the Save File dialog
 			SaveFileDialog saveFileDialog = new SaveFileDialog
 			{
-				InitialDirectory = @"C:\Users\Cyphall\Downloads\",
 				Filter = "png file (*.png)|*.png|jpeg file (*.jpg)|*.jpg",
 				FileName = "output",
 				RestoreDirectory = true
 			};
 
 			if (saveFileDialog.ShowDialog() != true) return;
-
 			
+			
+			// Apply all modifiers
+			byte[,] rData = r?.FinalData;
+			byte[,] gData = g?.FinalData;
+			byte[,] bData = b?.FinalData;
+			byte[,] aData = a?.FinalData;
+			
+
 			// Convert the connected ColorChannels to an image for saving
 			Bitmap bitmap = new Bitmap(width, height, PixelFormat.Format32bppArgb);
 
@@ -124,10 +130,10 @@ namespace TextureComposer.Views
 				for (int x = 0; x < width; x++)
 				{
 					bitmap.SetPixel(x, y, Color.FromArgb(
-						a?.TransformedByte(x, y) ?? 255,
-						r?.TransformedByte(x, y) ?? 0,
-						g?.TransformedByte(x, y) ?? 0,
-						b?.TransformedByte(x, y) ?? 0
+						aData?[x, y] ?? 255,
+						rData?[x, y] ?? 0,
+						gData?[x, y] ?? 0,
+						bData?[x, y] ?? 0
 					));
 				}
 			}

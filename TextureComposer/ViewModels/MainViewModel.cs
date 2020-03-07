@@ -20,6 +20,7 @@ namespace TextureComposer
 			ListViewModel.AddNodeType(() => new TextureNodeViewModel());
 			ListViewModel.AddNodeType(() => new ComposedTextureNodeViewModel());
 			ListViewModel.AddNodeType(() => new InvertNodeViewModel());
+			ListViewModel.AddNodeType(() => new SnapNodeViewModel());
 			ListViewModel.AddNodeType(() => new ExtractSizeNodeViewModel());
 			ListViewModel.AddNodeType(() => new ConstantNodeViewModel());
 		}

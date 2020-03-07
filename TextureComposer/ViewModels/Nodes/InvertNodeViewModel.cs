@@ -1,4 +1,5 @@
-﻿using System.Reactive.Linq;
+﻿using System;
+using System.Reactive.Linq;
 using DynamicData;
 using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
@@ -24,9 +25,13 @@ namespace TextureComposer
 			Out.Name = "Channel";
 			Out.Value = this.WhenAnyValue(vm => vm.In.Value)
 				.Select(
-					_ => In.Value?.AddModif(
-						b => (byte) (byte.MaxValue - b)
-						)
+					_ => In.Value?.AddModifier(
+						bytes => {
+							for (int i = 0; i < bytes.Length; i++)
+							{
+									bytes[i] = (byte) (byte.MaxValue - bytes[i]);
+							}
+						})
 					);
 			Outputs.Add(Out);
 		}

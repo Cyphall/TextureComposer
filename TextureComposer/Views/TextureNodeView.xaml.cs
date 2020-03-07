@@ -40,7 +40,6 @@ namespace TextureComposer.Views
 		{
 			OpenFileDialog dlg = new OpenFileDialog
 			{
-				InitialDirectory = @"C:\Users\Cyphall\Downloads\",
 				Filter = "Image files (*.png, *.jpg)|*.png;*.jpg;*.jpeg",
 				RestoreDirectory = true
 			};
