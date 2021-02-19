@@ -1,8 +1,9 @@
 ﻿using System.Reactive.Disposables;
 using System.Windows;
 using ReactiveUI;
+using TextureComposer.ViewModels;
 
-namespace TextureComposer
+namespace TextureComposer.Views
 {
 	public partial class MainWindow : IViewFor<MainViewModel>
 	{
@@ -32,7 +33,7 @@ namespace TextureComposer
 			this.WhenActivated(d =>
 			{
 				this.OneWayBind(ViewModel, vm => vm.ListViewModel, v => v.NodeList.ViewModel).DisposeWith(d);
-				this.OneWayBind(ViewModel, vm => vm.NetworkViewModel, v => v.ViewHost.ViewModel).DisposeWith(d);
+				this.OneWayBind(ViewModel, vm => vm.NetworkViewModel, v => v.NetworkView.ViewModel).DisposeWith(d);
 			});
 		}
 	}

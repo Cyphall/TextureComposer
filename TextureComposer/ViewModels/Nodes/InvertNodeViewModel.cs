@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reactive.Linq;
+﻿using System.Reactive.Linq;
 using DynamicData;
 using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
@@ -7,7 +6,7 @@ using ReactiveUI;
 using Splat;
 using TextureComposer.Views;
 
-namespace TextureComposer
+namespace TextureComposer.ViewModels.Nodes
 {
 	public class InvertNodeViewModel : NodeViewModel
 	{

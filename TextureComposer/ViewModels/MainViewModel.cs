@@ -2,8 +2,10 @@
 using NodeNetwork.ViewModels;
 using ReactiveUI;
 using Splat;
+using TextureComposer.ViewModels.Nodes;
+using TextureComposer.Views;
 
-namespace TextureComposer
+namespace TextureComposer.ViewModels
 {
 	public class MainViewModel : ReactiveObject
 	{

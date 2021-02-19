@@ -6,7 +6,7 @@ using ReactiveUI;
 using Splat;
 using TextureComposer.Views;
 
-namespace TextureComposer
+namespace TextureComposer.ViewModels.Nodes
 {
 	public class SnapNodeViewModel : NodeViewModel
 	{

@@ -3,7 +3,7 @@ using ReactiveUI;
 using Splat;
 using TextureComposer.Views;
 
-namespace TextureComposer
+namespace TextureComposer.ViewModels
 {
 	public class ByteValueEditorViewModel : ValueEditorViewModel<byte?>
 	{

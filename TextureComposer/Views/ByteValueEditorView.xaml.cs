@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using ReactiveUI;
+using TextureComposer.ViewModels;
 
 namespace TextureComposer.Views
 {
