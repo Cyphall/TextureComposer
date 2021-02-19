@@ -1,31 +1,23 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <OutputType>Exe</OutputType>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
-        <UseWPF>true</UseWPF>
-        <LangVersion>8</LangVersion>
-    </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net5.0-windows</TargetFramework>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
 
-    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <WarningLevel>0</WarningLevel>
-    </PropertyGroup>
+	<ItemGroup>
+		<ApplicationDefinition Remove="App.xaml"/>
+		<ApplicationDefinition Include="Views\App.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<XamlRuntime>Wpf</XamlRuntime>
+		</ApplicationDefinition>
+	</ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="ViewModels" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ApplicationDefinition Remove="App.xaml" />
-      <ApplicationDefinition Include="Views\App.xaml">
-        <Generator>MSBuild:Compile</Generator>
-      </ApplicationDefinition>
-    </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="MiqM.Xceed.Wpf.Toolkit.NETCore" Version="3.5.1.3" />
-      <PackageReference Include="NodeNetwork" Version="4.2.0" />
-      <PackageReference Include="NodeNetworkToolkit" Version="4.2.0" />
-    </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="MiqM.Xceed.Wpf.Toolkit.NETCore" Version="3.5.1.3"/>
+		<PackageReference Include="NodeNetwork" Version="4.2.0"/>
+		<PackageReference Include="NodeNetworkToolkit" Version="4.2.0"/>
+	</ItemGroup>
 
 </Project>
