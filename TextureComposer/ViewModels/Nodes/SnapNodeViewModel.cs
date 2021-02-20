@@ -10,10 +10,10 @@ namespace TextureComposer.ViewModels.Nodes
 {
 	public class SnapNodeViewModel : NodeViewModel
 	{
-		public ValueNodeInputViewModel<ColorChannel> In { get; } = new ValueNodeInputViewModel<ColorChannel>();
+		public ValueNodeInputViewModel<ColorChannel> In { get; } = new();
 
-		public ValueNodeOutputViewModel<ColorChannel> OutWhite { get; } = new ValueNodeOutputViewModel<ColorChannel>();
-		public ValueNodeOutputViewModel<ColorChannel> OutBlack { get; } = new ValueNodeOutputViewModel<ColorChannel>();
+		public ValueNodeOutputViewModel<ColorChannel> OutWhite { get; } = new();
+		public ValueNodeOutputViewModel<ColorChannel> OutBlack { get; } = new();
 
 		public SnapNodeViewModel()
 		{

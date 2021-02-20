@@ -106,7 +106,7 @@ namespace TextureComposer.Views
 			
 			
 			// Generate the Save File dialog
-			SaveFileDialog saveFileDialog = new SaveFileDialog
+			SaveFileDialog saveFileDialog = new()
 			{
 				Filter = "png file (*.png)|*.png|jpeg file (*.jpg)|*.jpg",
 				FileName = "output",
@@ -124,7 +124,7 @@ namespace TextureComposer.Views
 			
 
 			// Convert the connected ColorChannels to an image for saving
-			Bitmap bitmap = new Bitmap(width, height, PixelFormat.Format32bppArgb);
+			Bitmap bitmap = new(width, height, PixelFormat.Format32bppArgb);
 
 			for (int y = 0; y < height; y++)
 			{
@@ -155,7 +155,7 @@ namespace TextureComposer.Views
 					
 					ImageCodecInfo codec = ImageCodecInfo.GetImageEncoders().First(info => info.FormatID == format.Guid);
 
-					EncoderParameters parameters = new EncoderParameters
+					EncoderParameters parameters = new()
 					{
 						Param =
 						{

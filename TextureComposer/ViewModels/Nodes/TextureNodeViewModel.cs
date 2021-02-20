@@ -9,18 +9,18 @@ namespace TextureComposer.ViewModels.Nodes
 {
 	public class TextureNodeViewModel : NodeViewModel
 	{
-		public ValueEditorViewModel<ColorChannel> R = new ValueEditorViewModel<ColorChannel>();
-		public ValueEditorViewModel<ColorChannel> G = new ValueEditorViewModel<ColorChannel>();
-		public ValueEditorViewModel<ColorChannel> B = new ValueEditorViewModel<ColorChannel>();
-		public ValueEditorViewModel<ColorChannel> A = new ValueEditorViewModel<ColorChannel>();
-		public ValueEditorViewModel<Size> TextureSize = new ValueEditorViewModel<Size>();
+		public ValueEditorViewModel<ColorChannel> R = new();
+		public ValueEditorViewModel<ColorChannel> G = new();
+		public ValueEditorViewModel<ColorChannel> B = new();
+		public ValueEditorViewModel<ColorChannel> A = new();
+		public ValueEditorViewModel<Size> TextureSize = new();
 		
-		public ValueNodeOutputViewModel<ColorChannel> OutR { get; } = new ValueNodeOutputViewModel<ColorChannel>();
-		public ValueNodeOutputViewModel<ColorChannel> OutG { get; } = new ValueNodeOutputViewModel<ColorChannel>();
-		public ValueNodeOutputViewModel<ColorChannel> OutB { get; } = new ValueNodeOutputViewModel<ColorChannel>();
-		public ValueNodeOutputViewModel<ColorChannel> OutA { get; } = new ValueNodeOutputViewModel<ColorChannel>();
+		public ValueNodeOutputViewModel<ColorChannel> OutR { get; } = new();
+		public ValueNodeOutputViewModel<ColorChannel> OutG { get; } = new();
+		public ValueNodeOutputViewModel<ColorChannel> OutB { get; } = new();
+		public ValueNodeOutputViewModel<ColorChannel> OutA { get; } = new();
 		
-		public ValueNodeOutputViewModel<Size> OutTextureSize { get; } = new ValueNodeOutputViewModel<Size>();
+		public ValueNodeOutputViewModel<Size> OutTextureSize { get; } = new();
 		
 		public TextureNodeViewModel()
 		{

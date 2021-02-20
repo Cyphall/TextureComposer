@@ -14,8 +14,8 @@ namespace TextureComposer.ViewModels
 			Locator.CurrentMutable.Register(() => new MainWindow(), typeof(IViewFor<MainViewModel>));
 		}
 		
-		public NodeListViewModel ListViewModel { get; } = new NodeListViewModel();
-		public NetworkViewModel NetworkViewModel { get; } = new NetworkViewModel();
+		public NodeListViewModel ListViewModel { get; } = new();
+		public NetworkViewModel NetworkViewModel { get; } = new();
 
 		public MainViewModel()
 		{

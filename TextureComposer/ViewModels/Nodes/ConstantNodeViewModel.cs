@@ -10,11 +10,11 @@ namespace TextureComposer.ViewModels.Nodes
 {
 	public class ConstantNodeViewModel : NodeViewModel
 	{
-		public ByteValueEditorViewModel Color = new ByteValueEditorViewModel();
+		public ByteValueEditorViewModel Color = new();
 		
-		public ValueNodeInputViewModel<Size> In { get; } = new ValueNodeInputViewModel<Size>();
+		public ValueNodeInputViewModel<Size> In { get; } = new();
 		
-		public ValueNodeOutputViewModel<ColorChannel> Out { get; } = new ValueNodeOutputViewModel<ColorChannel>();
+		public ValueNodeOutputViewModel<ColorChannel> Out { get; } = new();
 		
 		public ConstantNodeViewModel()
 		{

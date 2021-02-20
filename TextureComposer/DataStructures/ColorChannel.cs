@@ -7,7 +7,7 @@ namespace TextureComposer
 	public class ColorChannel
 	{
 		private byte[] _data;
-		private List<Action<byte[]>> _modifiers = new List<Action<byte[]>>();
+		private List<Action<byte[]>> _modifiers = new();
 		
 		public byte this[int x, int y]
 		{
@@ -73,7 +73,7 @@ namespace TextureComposer
 
 		public ColorChannel AddModifier(Action<byte[]> newModifier)
 		{
-			List<Action<byte[]>> modifiers = new List<Action<byte[]>>();
+			List<Action<byte[]>> modifiers = new();
 			
 			_modifiers.ForEach(modifier => modifiers.Add((Action<byte[]>)modifier.Clone()));
 			

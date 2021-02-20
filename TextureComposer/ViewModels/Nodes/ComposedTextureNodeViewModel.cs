@@ -9,10 +9,10 @@ namespace TextureComposer.ViewModels.Nodes
 {
 	public class ComposedTextureNodeViewModel : NodeViewModel
 	{
-		public ValueNodeInputViewModel<ColorChannel> InR { get; } = new ValueNodeInputViewModel<ColorChannel>();
-		public ValueNodeInputViewModel<ColorChannel> InG { get; } = new ValueNodeInputViewModel<ColorChannel>();
-		public ValueNodeInputViewModel<ColorChannel> InB { get; } = new ValueNodeInputViewModel<ColorChannel>();
-		public ValueNodeInputViewModel<ColorChannel> InA { get; } = new ValueNodeInputViewModel<ColorChannel>();
+		public ValueNodeInputViewModel<ColorChannel> InR { get; } = new();
+		public ValueNodeInputViewModel<ColorChannel> InG { get; } = new();
+		public ValueNodeInputViewModel<ColorChannel> InB { get; } = new();
+		public ValueNodeInputViewModel<ColorChannel> InA { get; } = new();
 		
 		public ComposedTextureNodeViewModel()
 		{

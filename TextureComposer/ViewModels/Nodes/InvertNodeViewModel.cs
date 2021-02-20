@@ -10,9 +10,9 @@ namespace TextureComposer.ViewModels.Nodes
 {
 	public class InvertNodeViewModel : NodeViewModel
 	{
-		public ValueNodeInputViewModel<ColorChannel> In { get; } = new ValueNodeInputViewModel<ColorChannel>();
+		public ValueNodeInputViewModel<ColorChannel> In { get; } = new();
 		
-		public ValueNodeOutputViewModel<ColorChannel> Out { get; } = new ValueNodeOutputViewModel<ColorChannel>();
+		public ValueNodeOutputViewModel<ColorChannel> Out { get; } = new();
 		
 		public InvertNodeViewModel()
 		{

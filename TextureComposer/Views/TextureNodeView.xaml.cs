@@ -39,7 +39,7 @@ namespace TextureComposer.Views
 		
 		private void BrowseButton_Click(object sender, RoutedEventArgs e)
 		{
-			OpenFileDialog dlg = new OpenFileDialog
+			OpenFileDialog dlg = new()
 			{
 				Filter = "Image files (*.png, *.jpg)|*.png;*.jpg;*.jpeg",
 				RestoreDirectory = true
@@ -49,15 +49,15 @@ namespace TextureComposer.Views
 
 			ViewModel.Name = Path.GetFileName(dlg.FileName);
 			
-			Bitmap image = new Bitmap(dlg.FileName);
+			Bitmap image = new(dlg.FileName);
 			
 			int height = image.Height;
 			int width = image.Width;
 
-			ColorChannel r = new ColorChannel(width, height);
-			ColorChannel g = new ColorChannel(width, height);
-			ColorChannel b = new ColorChannel(width, height);
-			ColorChannel a = new ColorChannel(width, height);
+			ColorChannel r = new(width, height);
+			ColorChannel g = new(width, height);
+			ColorChannel b = new(width, height);
+			ColorChannel a = new(width, height);
 
 			for (int y = 0; y < height; y++)
 			{
