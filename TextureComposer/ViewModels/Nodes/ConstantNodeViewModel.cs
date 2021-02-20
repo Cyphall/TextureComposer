@@ -25,9 +25,9 @@ namespace TextureComposer.ViewModels.Nodes
 			
 			Out.Name = "Channel";
 			Out.Editor = Color;
-			Out.Value = this.WhenAnyValue(vm => vm.In.Value)
+			Out.Value = this.WhenAnyValue(vm => vm.In.Value, vm => vm.Color.Value)
 				.Select(
-					_ => In.Value != null ? new ColorChannel(In.Value.X, In.Value.Y, Color.Value.GetValueOrDefault(0)) : null
+					data => data.Item1 != null ? new ColorChannel(data.Item1.X, data.Item1.Y, data.Item2) : null
 				);
 			Outputs.Add(Out);
 		}

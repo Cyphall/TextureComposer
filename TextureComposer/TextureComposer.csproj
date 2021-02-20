@@ -17,7 +17,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Dirkster.NumericUpDownLib" Version="2.4.2.2" />
+		<PackageReference Include="Extended.Wpf.Toolkit" Version="4.0.2" />
 		<PackageReference Include="NodeNetwork" Version="5.1.2" />
 		<PackageReference Include="NodeNetworkToolkit" Version="5.1.2" />
 	</ItemGroup>

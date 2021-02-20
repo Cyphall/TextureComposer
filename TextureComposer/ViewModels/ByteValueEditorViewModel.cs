@@ -5,7 +5,7 @@ using TextureComposer.Views;
 
 namespace TextureComposer.ViewModels
 {
-	public class ByteValueEditorViewModel : ValueEditorViewModel<byte?>
+	public class ByteValueEditorViewModel : ValueEditorViewModel<byte>
 	{
 		static ByteValueEditorViewModel()
 		{
