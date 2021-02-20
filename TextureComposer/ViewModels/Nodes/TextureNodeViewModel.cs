@@ -13,11 +13,14 @@ namespace TextureComposer.ViewModels.Nodes
 		public ValueEditorViewModel<ColorChannel> G = new ValueEditorViewModel<ColorChannel>();
 		public ValueEditorViewModel<ColorChannel> B = new ValueEditorViewModel<ColorChannel>();
 		public ValueEditorViewModel<ColorChannel> A = new ValueEditorViewModel<ColorChannel>();
+		public ValueEditorViewModel<Size> TextureSize = new ValueEditorViewModel<Size>();
 		
 		public ValueNodeOutputViewModel<ColorChannel> OutR { get; } = new ValueNodeOutputViewModel<ColorChannel>();
 		public ValueNodeOutputViewModel<ColorChannel> OutG { get; } = new ValueNodeOutputViewModel<ColorChannel>();
 		public ValueNodeOutputViewModel<ColorChannel> OutB { get; } = new ValueNodeOutputViewModel<ColorChannel>();
 		public ValueNodeOutputViewModel<ColorChannel> OutA { get; } = new ValueNodeOutputViewModel<ColorChannel>();
+		
+		public ValueNodeOutputViewModel<Size> OutTextureSize { get; } = new ValueNodeOutputViewModel<Size>();
 		
 		public TextureNodeViewModel()
 		{
@@ -38,6 +41,10 @@ namespace TextureComposer.ViewModels.Nodes
 			OutA.Name = "A";
 			OutA.Value = this.WhenAnyValue(vm => vm.A.Value);
 			Outputs.Add(OutA);
+
+			OutTextureSize.Name = "Size";
+			OutTextureSize.Value = this.WhenAnyValue(vm => vm.TextureSize.Value);
+			Outputs.Add(OutTextureSize);
 		}
 		
 		static TextureNodeViewModel()

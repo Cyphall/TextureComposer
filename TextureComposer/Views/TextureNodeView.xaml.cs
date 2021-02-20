@@ -76,6 +76,7 @@ namespace TextureComposer.Views
 			ViewModel.G.Value = g;
 			ViewModel.B.Value = b;
 			ViewModel.A.Value = a;
+			ViewModel.TextureSize.Value = new Size(width, height);
 		}
 	}
 }
