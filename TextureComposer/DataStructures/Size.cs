@@ -1,4 +1,4 @@
-﻿namespace TextureComposer
+﻿namespace TextureComposer.DataStructures
 {
 	public class Size
 	{

@@ -3,6 +3,7 @@ using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
 using Splat;
+using TextureComposer.DataStructures;
 using TextureComposer.Views;
 
 namespace TextureComposer.ViewModels.Nodes

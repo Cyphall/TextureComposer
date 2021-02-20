@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace TextureComposer
+namespace TextureComposer.DataStructures
 {
 	public class ColorChannel
 	{
